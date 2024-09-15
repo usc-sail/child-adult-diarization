@@ -1,0 +1,26 @@
+# input directories
+child_dir: /data/anfengxu/test/audioset_extracted/child
+adult_male_dir: /data/anfengxu/test/audioset_extracted/adult_male
+adult_female_dir : /data/anfengxu/test/audioset_extracted/adult_female
+background_noise_dir: /data/anfengxu/musan/background/
+
+# output directories
+output_dir: /data/anfengxu/test/simulated_conversations/audios/5k
+output_dir_labels: /data/anfengxu/test/simulated_conversations/labels/labels_5k
+output_dir_overlap_labels: /data/anfengxu/test/simulated_conversations/labels/labels_o_5k
+
+# hyper-parameters per each conversation
+p_overlap: 0.1
+p_child: 0.4
+p_start_utterance: 0.5
+Beta_intra: 1
+Beta_inter: 0.8
+
+# global hyper-parameters
+SAMPLE_RATE: 16000
+MAX_LENGTH: 10
+
+p_adult_female: 0.85
+train_percent: 0.9
+num_train_conversations: 5000
+num_val_conversations: 500
