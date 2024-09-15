@@ -11,7 +11,7 @@ def extract_speech(files, timestamps, output_path):
 
     with open(timestamps, "r") as f:
         speeches = yaml.safe_load(f)
-
+    import pdb; pdb.set_trace()
     for f in tqdm(files):
         file_name = f.split('/')[-1].split('.')[0]
         if file_name not in speeches:
@@ -34,7 +34,7 @@ def extract_speech(files, timestamps, output_path):
             torchaudio.save(save_dir + f'/{start}_{end}_{prob}.wav', child_speech, sample_rate)
 
 if __name__ == '__main__':
-    child_files = glob.glob(os.path.join(configs["download_path"] + 'audioset_child_16k/*.wav'))
+    child_files = glob.glob(os.path.join(configs["download_path"], 'audioset_child_16k/*.wav'))
     adult_female_files = glob.glob(os.path.join(configs["download_path"], 'audioset_adult_female_16k/*.wav'))
     adult_male_files = glob.glob(os.path.join(configs["download_path"], 'audioset_adult_male_16k/*.wav'))
 
