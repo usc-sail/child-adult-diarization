@@ -1,0 +1,38 @@
+name: whisper_tiny_5k
+
+# path to save checkpoints
+save: /proj/anfengxu/child-adult-diarization/whisper-modeling
+
+# audio and anotation path
+audio: /data/anfengxu/test/simulated_conversations/audios/5k
+annotation: /data/anfengxu/test/simulated_conversations/labels/labels_o_5k
+# seed:
+seed: 42
+
+# data:
+batch_size: 64
+window_size: 10
+accumulate_grad_batches: 1
+
+# model:
+learning_rate: 0.001
+weight_decay: 0.0001
+lora_rank: 8
+
+# trainer:
+max_epochs: 20
+devices: [0]
+
+# optimizer:
+optimizer: Adam
+
+# embedding choice:
+embedding: whisper_tiny
+num_enc_layers_dict:
+    whisper_small:    12
+    whisper_base:     6
+    whisper_tiny:     4
+hid_dim_dict:
+    whisper_small:    768
+    whisper_base:     512
+    whisper_tiny:     384
