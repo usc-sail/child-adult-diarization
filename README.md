@@ -1,7 +1,7 @@
 # child-adult-diarization
 
+Public child-adult speaker diarization or classification model and code with simulated conversations
 (Repo work in progress, expected to be complete by end of Sep/2024)
-Child-adult speaker diarization or classification with simulated conversations
 
 ## Quick Start
 1. Clone this repo and cd to whisper-modeling
