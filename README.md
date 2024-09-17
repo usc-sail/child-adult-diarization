@@ -28,3 +28,26 @@ test_data = torch.zeros([1, 16000]).cuda()
 output = model.forward_eval(test_data)
 ```
 Please raise an issue or contact anfengxu@usc.edu for any questions.
+
+
+## Citation
+```bibtex
+@article{xu2024data,
+      title={Data Efficient Child-Adult Speaker Diarization with Simulated Conversations}, 
+      author={Anfeng Xu and Tiantian Feng and Helen Tager-Flusberg and Catherine Lord and Shrikanth Narayanan},
+      year={2024},
+      journal={arXiv preprint arXiv:2409.08881},
+      url={https://arxiv.org/abs/2409.08881}, 
+}
+```
+```bibtex
+@inproceedings{xu24c_interspeech,
+  title     = {Exploring Speech Foundation Models for Speaker Diarization in Child-Adult Dyadic Interactions},
+  author    = {Anfeng Xu and Kevin Huang and Tiantian Feng and Lue Shen and Helen Tager-Flusberg and Shrikanth Narayanan},
+  year      = {2024},
+  booktitle = {Interspeech 2024},
+  pages     = {5193--5197},
+  doi       = {10.21437/Interspeech.2024-717},
+  issn      = {2958-1796},
+}
+```
