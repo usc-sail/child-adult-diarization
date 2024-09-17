@@ -1,19 +1,19 @@
 # child-adult-diarization
 
 Public child-adult speaker diarization or classification model and code with simulated conversations
-(Repo work in progress, expected to be complete by end of Sep/2024)
+(Repo work in progress, expected to be complete by the end of Sep/2024)
 
 ## Quick Start
 1. Clone this repo and cd to whisper-modeling
 ```bash
-gut clone https://github.com/usc-sail/child-adult-diarization.git
+git clone https://github.com/usc-sail/child-adult-diarization.git
 cd child-adult-diarization/whisper-modeling
 ```
 2. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
-3. Downlad _whisper-base_rank8_pretrained_50k.pt_ from https://huggingface.co/AlexXu811/whisper-child-adult/tree/main
+3. Download _whisper-base_rank8_pretrained_50k.pt_ from https://huggingface.co/AlexXu811/whisper-child-adult/tree/main
 4. Example python code is as below:
 ```python
 from models.whisper import WhisperWrapper
