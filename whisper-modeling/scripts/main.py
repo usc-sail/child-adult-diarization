@@ -32,16 +32,7 @@ if __name__ == '__main__':
         configs["debug"] = False
     
     # set seed
-    set_seed(configs["seed"])
-    
-    
-    # remove previous predictions
-    dest_path = os.path.join(configs["save"], "predictions", configs["name"] + ".pkl")
-    if os.path.exists(dest_path):
-        print("Removing previous predictions: ", dest_path)
-        import pdb; pdb.set_trace()
-        os.remove(dest_path)
-        
+    set_seed(configs["seed"])    
 
     # remove previous checkpoints
     checkpoint_path = os.path.join(configs["save"], "checkpoints", configs["name"])
@@ -84,10 +75,8 @@ if __name__ == '__main__':
     )
     
     trainer.fit(model)
-    # import pdb; pdb.set_trace()
     print("best model: ", trainer.checkpoint_callback.best_model_path)
     model_test = Classifier.load_from_checkpoint(trainer.checkpoint_callback.best_model_path, strict=False)
     
-    # result = trainer.test(ckpt_path="best")
     result = trainer.test(model_test)
     # print(result)

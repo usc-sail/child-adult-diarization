@@ -106,8 +106,8 @@ class WhisperEncoderLayer(nn.Module):
 class WhisperWrapper(nn.Module):
     def __init__(
         self, 
-        pretrained_model="whisper_tiny", 
-        lora_rank=16,
+        pretrained_model="whisper_base", 
+        lora_rank=8,
         use_conv_output=False,
         hidden_dim=256,
         output_class_num=4
@@ -241,6 +241,13 @@ class WhisperWrapper(nn.Module):
         features = features.transpose(1, 2)
         predicted = self.model_seq(features)
         return predicted
+
+    def forward_eval(self, x):
+        outputs = self.forward(x)
+        outputs = torch.log_softmax(outputs, dim=1)
+        pred = torch.argmax(outputs, dim=1).detach().cpu()
+        pred = pred.squeeze(0)
+        return pred
         
     # From huggingface
     def get_feat_extract_output_lengths(self, input_lengths):

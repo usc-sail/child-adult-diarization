@@ -1,4 +1,4 @@
-name: whisper_tiny_5k
+name: whisper_base_5k
 
 # path to save checkpoints
 save: /proj/anfengxu/child-adult-diarization/whisper-modeling
@@ -27,7 +27,7 @@ devices: [0]
 optimizer: Adam
 
 # embedding choice:
-embedding: whisper_tiny
+embedding: whisper_base
 num_enc_layers_dict:
     whisper_small:    12
     whisper_base:     6
