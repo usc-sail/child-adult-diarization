@@ -7,8 +7,7 @@ Public child-adult speaker diarization or classification model and code with sim
 1. Clone this repo and cd to whisper-modeling
 ```bash
 gut clone https://github.com/usc-sail/child-adult-diarization.git
-cd child-adult-diarization
-cd whisper-modeling
+cd child-adult-diarization/whisper-modeling
 ```
 2. Install dependencies
 ```bash
