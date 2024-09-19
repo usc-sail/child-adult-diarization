@@ -13,7 +13,7 @@ cd child-adult-diarization/whisper-modeling
 pip install -r requirements.txt
 ```
 3. Download _whisper-base_rank8_pretrained_50k.pt_ from https://huggingface.co/AlexXu811/whisper-child-adult/tree/main
-4. Example python code is as below:
+4. Example python code is as below. The model outputs one of {0: silence, 1: child, 2: adult, 3: overlap} at the frame-level (for each 20ms).
 ```python
 from models.whisper import WhisperWrapper
 import torch
@@ -26,7 +26,7 @@ model.cuda()
 test_data = torch.zeros([1, 16000]).cuda()
 output = model.forward_eval(test_data)
 ```
-Please raise an issue or contact anfengxu@usc.edu for any questions.
+5. An example code to map the frame-level outputs to timestamps is in TODO.
 
 
 ## Citation
@@ -50,3 +50,5 @@ Please raise an issue or contact anfengxu@usc.edu for any questions.
   issn      = {2958-1796},
 }
 ```
+
+Please raise an issue or contact anfengxu@usc.edu for any questions.
