@@ -13,7 +13,7 @@ cd child-adult-diarization/whisper-modeling
 pip install -r requirements.txt
 ```
 3. Download _whisper-base_rank8_pretrained_50k.pt_ from https://huggingface.co/AlexXu811/whisper-child-adult/tree/main
-4. Example python code is as below. The model outputs one of {0: silence, 1: child, 2: adult, 3: overlap} at the frame-level (for each 20ms). 
+4. Example python code is as below. The model outputs one of {0: silence, 1: child, 2: adult, 3: overlap} at the frame-level (for each 20ms). Recommended to use 10s audio segments as inputs, as the pre-trained model is trained with 10s audio inputs.
 ```python
 from models.whisper import WhisperWrapper
 import torch
