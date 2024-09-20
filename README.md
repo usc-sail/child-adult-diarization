@@ -27,6 +27,11 @@ test_data = torch.zeros([1, 160000]).cuda()
 output = model.forward_eval(test_data)
 ```
 5. An example code to map the frame-level outputs to timestamps is in TODO.
+```python
+from scripts.convert_output import get_timestamps, majority_filter
+output = majority_filter(output)
+output = get_timestamps(output)
+```
 
 
 ## Citation
