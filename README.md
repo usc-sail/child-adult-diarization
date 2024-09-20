@@ -8,12 +8,12 @@ Public child-adult speaker diarization or classification model and code with sim
 git clone https://github.com/usc-sail/child-adult-diarization.git
 cd child-adult-diarization/whisper-modeling
 ```
-2. Install dependencies
+2. Install dependencies (Python 3.10.9 was used originally and thus recommended for dependencies) 
 ```bash
 pip install -r requirements.txt
 ```
 3. Download _whisper-base_rank8_pretrained_50k.pt_ from https://huggingface.co/AlexXu811/whisper-child-adult/tree/main
-4. Example python code is as below. The model outputs one of {0: silence, 1: child, 2: adult, 3: overlap} at the frame-level (for each 20ms). Exxpects 10s audio input.
+4. Example python code is as below. The model outputs one of {0: silence, 1: child, 2: adult, 3: overlap} at the frame-level (for each 20ms). 
 ```python
 from models.whisper import WhisperWrapper
 import torch
