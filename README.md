@@ -1,6 +1,7 @@
 # child-adult-diarization
 
-Public child-adult speaker diarization or classification model and code with simulated conversations
+Public child-adult speaker diarization or classification model and code with simulated conversations. 
+Can be used both for zero-shot and transfer-learning.
 
 ## Quick Start
 1. Clone this repo and cd to whisper-modeling
@@ -26,7 +27,12 @@ model.cuda()
 test_data = torch.zeros([1, 160000]).cuda()
 output = model.forward_eval(test_data)
 ```
-5. An example code to map the frame-level outputs to timestamps is in TODO.
+5. An example code to map the frame-level outputs to child, adult, and overlap timestamps:
+```python
+from scripts.convert_output import get_timestamps, majority_filter
+output = majority_filter(output)
+output = get_timestamps(output)
+```
 
 
 ## Citation
