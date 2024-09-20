@@ -1,0 +1,8 @@
+audioset-download
+numpy
+pydub
+PyYAM
+scipy
+torch
+torchaudio
+tqdm
