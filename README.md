@@ -34,6 +34,51 @@ output = majority_filter(output)
 output = get_timestamps(output)
 ```
 
+## Train
+1. Install dependencies (as shown in quick start).
+2.  Prepare the train data. An example annotation file is shown in example_label.csv. The training data structures are as follows:
+```bash
+project-root/
+│
+├── audio_dir/
+│   ├── train/
+│   │   ├── train_file1.wav
+│   │   ├── train_file2.wav
+│   │   └── ...
+│   ├── val/
+│   │   ├── val_file1.wav
+│   │   ├── val_file2.wav
+│   │   └── ...
+├── anotation_dir/
+│   ├── train/
+│   │   ├── train_file1.csv
+│   │   ├── train_file2.csv
+│   │   └── ...
+│   ├── val/
+│   │   ├── val_file1.csv
+│   │   ├── val_file2.csv
+│   │   └── ...
+```
+3. Edit the config file (especially the paths).
+4. Run the following to start training
+```bash
+python scripts/main.py --debug f --config path/to/config_file
+```
+
+## Data Simulation with AudioSet
+1. Install dependencies 
+```bash
+cd path/to/conversation_simulation
+pip install -r requirements.txt
+```
+2. Change the config_audioset.yaml and prepare AudioSet by running the three files (download -> reample to 16k -> extract speech segments). The json files contain extracted timestamps and child/adult speech probabilities using an internal pre-trained model. 
+```bash
+python download_audioset.py
+python audio_resample.py
+python process_audioset.py
+```
+3. Modify the config_simulated_conversation.yaml and run build_conversations.py
+
 
 ## Citation
 ```bibtex
