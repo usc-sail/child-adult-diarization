@@ -1,7 +1,7 @@
 audioset-download
 numpy
 pydub
-PyYAM
+PyYAML
 scipy
 torch
 torchaudio
