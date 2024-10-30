@@ -1,7 +1,7 @@
 # child-adult-diarization
 
 Public child-adult speaker diarization or classification model and code with simulated conversations. 
-Can be used both for zero-shot and transfer-learning. Zero-shot works well with younger children (around 7 or less years old).
+Can be used both for zero-shot and transfer-learning. Zero-shot works well with younger children (around 6 or less years old).
 
 ## Quick Start
 1. Clone this repo and cd to whisper-modeling
