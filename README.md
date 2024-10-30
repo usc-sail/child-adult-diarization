@@ -79,6 +79,8 @@ python process_audioset.py
 ```
 3. Modify the config_simulated_conversation.yaml and run build_conversations.py
 
+## Other notes
+1. The extraccted AudioSet child speech skew younger demographics. If you intend to use it for older children, I recommend training with older child speech (e.g., MyST).
 
 ## Citation
 ```bibtex
@@ -102,4 +104,4 @@ python process_audioset.py
 }
 ```
 
-Please raise an issue or contact anfengxu@usc.edu for any questions.
+Please raise an issue for any questions and feel free to contact us by anfengxu@usc.edu.
