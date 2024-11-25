@@ -36,7 +36,7 @@ output = get_timestamps(output)
 
 ## Train
 1. Install dependencies (as shown in quick start).
-2.  Prepare the train data. An example annotation file is shown in example_label.csv. The wav files should be 10s, but feel free to modify the codes to change this. The training data structures are as follows:
+2.  Prepare the train data. An example annotation file is shown in example_label.csv. The wav files can be any size, since the training code (dataset_classes/preprocess.py) samples 10s sub-segments with 50% overlap between adjacent sub-segments. The training data structures are as follows:
 ```bash
 project-root/
 │
