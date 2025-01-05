@@ -84,12 +84,13 @@ python process_audioset.py
 
 ## Citation
 ```bibtex
-@article{xu2024data,
+@article{xu2025data,
       title={Data Efficient Child-Adult Speaker Diarization with Simulated Conversations}, 
       author={Anfeng Xu and Tiantian Feng and Helen Tager-Flusberg and Catherine Lord and Shrikanth Narayanan},
-      year={2024},
-      journal={arXiv preprint arXiv:2409.08881},
-      url={https://arxiv.org/abs/2409.08881}, 
+      year={2025},
+      booktitle={ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+      url={https://arxiv.org/abs/2409.08881},
+      organization={IEEE},
 }
 ```
 ```bibtex
