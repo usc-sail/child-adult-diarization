@@ -88,7 +88,7 @@ python process_audioset.py
       title={Data Efficient Child-Adult Speaker Diarization with Simulated Conversations}, 
       author={Anfeng Xu and Tiantian Feng and Helen Tager-Flusberg and Catherine Lord and Shrikanth Narayanan},
       year={2025},
-      booktitle={ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+      booktitle={ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
       url={https://arxiv.org/abs/2409.08881},
       organization={IEEE},
 }
