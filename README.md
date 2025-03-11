@@ -80,7 +80,9 @@ python process_audioset.py
 3. Modify the config_simulated_conversation.yaml and run build_conversations.py
 
 ## Other notes
-1. The extraccted AudioSet child speech skew younger demographics. If you intend to use it for older children, I recommend training with older child speech (e.g., MyST).
+1. The extracted AudioSet child speech skew younger demographics. If you intend to use it for older children, I recommend fine-tuning or training with older child speech (e.g., MyST).
+2. When preparing your dataset for fine-tuning, we recommend using Praat software for precise annotations (e.g., an utterance should be separated if there is >200ms silence). The annotation for Remote-NLS used in the paper is described in https://arxiv.org/pdf/2305.14117.
+3. We might soon release the model trained with Remote-NLS to academic researchers with appropriate DUA/certificates. Those interested can reach out to anfengxu@usc.edu.
 
 ## Citation
 ```bibtex
