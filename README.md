@@ -14,7 +14,7 @@ cd child-adult-diarization/whisper-modeling
 pip install -r requirements.txt
 ```
 3. Download _whisper-base_rank8_pretrained_50k.pt_ from https://huggingface.co/AlexXu811/whisper-child-adult/tree/main. This model works well with younger children (around 6 or less years old) zero-shot.
-4. To infer on a wav file, run the following. Make sure that the sample rate of the wav file is 16k. Optionally, you'll be able to better understand by looking at sections 5 and 6.
+4. To infer on a wav file, run the following. Make sure that the sample rate of the wav file is 16kHz. Optionally, you'll be able to better understand by looking at sections 5 and 6.
 ```bash
 python scripts/infer_wav_file.py --wav_file <path_to_your_wav_file>
 ```
