@@ -18,9 +18,6 @@ def combine_results(intervals):
 def process_wav_file(audio_file, model):
     child_pred, adult_pred, overlap_pred = [], [], []
     x, sample_rate = torchaudio.load(audio_file)
-    # Convert to mono if it's stereo (multi-channel)
-    if x.size(0) > 1:
-        x = torch.mean(x, dim=0, keepdim=True)
     x = x.float()
     length = x.size(1) / sample_rate
     start = 0
