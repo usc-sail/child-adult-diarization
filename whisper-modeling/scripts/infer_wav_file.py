@@ -4,6 +4,7 @@ import torch, torchaudio, argparse
 
 
 WINDOW_SIZE = 10
+SAMPLE_RATE = 16000
 
 def combine_results(intervals):
     new_intervals = []
@@ -21,6 +22,11 @@ def process_wav_file(audio_file, model):
     # Convert to mono if it's stereo (multi-channel)
     if x.size(0) > 1:
         x = torch.mean(x, dim=0, keepdim=True)
+    # Resample if the sample rate is not 16kHz
+    if sample_rate != SAMPLE_RATE:
+        resample = torchaudio.transforms.Resample(orig_freq=sample_rate, new_freq=SAMPLE_RATE)
+        x = resample(x)
+        sample_rate = SAMPLE_RATE
     x = x.float()
     length = x.size(1) / sample_rate
     start = 0
