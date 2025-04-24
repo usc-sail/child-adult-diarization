@@ -14,11 +14,12 @@ cd child-adult-diarization/whisper-modeling
 pip install -r requirements.txt
 ```
 3. Download _whisper-base_rank8_pretrained_50k.pt_ from https://huggingface.co/AlexXu811/whisper-child-adult/tree/main. This model works well with younger children (around 6 or less years old) zero-shot.
-4. To infer on a wav file, run the following. Make sure that the sample rate of the wav file is 16kHz. Optionally, you'll be able to better understand by looking at sections 5 and 6.
+4. To infer on a wav file, run the following. Make sure that the sample rate of the wav file is 16kHz. If you do not have a GPU, please look at section 5 for CPU-only use. Optionally, you'll be able to better understand by looking at sections 6 and 7. 
 ```bash
 python scripts/infer_wav_file.py --wav_file <path_to_your_wav_file>
 ```
-5. (Optional) Example Python code is as below. The model outputs one of {0: silence, 1: child, 2: adult, 3: overlap} at the frame-level (for each 20ms). Recommended to use 10s audio segments as inputs, as the pre-trained model is trained with 10s audio inputs.
+5. For CPU only use, please comment out lines 55-58 and uncomment lines 61-64. Also remove .cuda() in models/whisper.py.
+6. (Optional) Example Python code is as below. The model outputs one of {0: silence, 1: child, 2: adult, 3: overlap} at the frame-level (for each 20ms). Recommended to use 10s audio segments as inputs, as the pre-trained model is trained with 10s audio inputs.
 ```python
 from models.whisper import WhisperWrapper
 import torch
@@ -31,7 +32,7 @@ model.cuda()
 test_data = torch.zeros([1, 160000]).cuda()
 output = model.forward_eval(test_data)
 ```
-5. (Optional) Example code to map the frame-level outputs to child, adult, and overlap timestamps:
+7. (Optional) Example code to map the frame-level outputs to child, adult, and overlap timestamps:
 ```python
 from scripts.convert_output import get_timestamps, majority_filter
 output = majority_filter(output)
