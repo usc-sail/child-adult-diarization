@@ -56,6 +56,8 @@ if __name__ == '__main__':
     model.backbone_model.encoder.embed_positions = model.backbone_model.encoder.embed_positions.from_pretrained(model.embed_positions[:500])
     model.load_state_dict(torch.load("whisper-base_rank8_pretrained_50k.pt"))
     model.cuda()
+
+    # uncoment for CPU only use and remove .cuda() in models/whisper.py
     # model = WhisperWrapper()
     # model.to('cpu')
     # model.backbone_model.encoder.embed_positions = model.backbone_model.encoder.embed_positions.from_pretrained(model.embed_positions[:500])
