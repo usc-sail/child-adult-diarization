@@ -9,7 +9,7 @@ SAMPLE_RATE = 16000
 def combine_results(intervals):
     new_intervals = []
     for start, end in intervals:
-        if len(new_intervals) == 0 or start - new_intervals[-1][1] > 0.1:
+        if len(new_intervals) == 0 or start - new_intervals[-1][1] > 0.01:
             new_intervals.append((round(start, 2), round(end, 2)))
         else:
             new_intervals[-1] = (new_intervals[-1][0], round(end, 3))
@@ -56,6 +56,11 @@ if __name__ == '__main__':
     model.backbone_model.encoder.embed_positions = model.backbone_model.encoder.embed_positions.from_pretrained(model.embed_positions[:500])
     model.load_state_dict(torch.load("whisper-base_rank8_pretrained_50k.pt"))
     model.cuda()
+    # model = WhisperWrapper()
+    # model.to('cpu')
+    # model.backbone_model.encoder.embed_positions = model.backbone_model.encoder.embed_positions.from_pretrained(model.embed_positions[:500])
+    # model.load_state_dict(torch.load("whisper-base_rank8_pretrained_50k.pt", map_location='cpu'))
+    
     # get predictions
     child_pred, adult_pred, overlap_pred = process_wav_file(args.wav_file, model)
     print("Predicted child speech segments:")
@@ -64,3 +69,4 @@ if __name__ == '__main__':
     print(adult_pred)
     print("Predicted overlap speech segments:")
     print(overlap_pred)
+    print(len(child_pred), len(adult_pred), len(overlap_pred))
